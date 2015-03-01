@@ -22,7 +22,9 @@ define :secrets_template do
       File.exists?("#{params[:deploy][:deploy_to]}/shared/config")
     end
   end
+end
 
+define :shards_template do
   template "#{params[:deploy][:deploy_to]}/shared/config/shards.yml" do
     source "shards.yml.erb"
     owner params[:deploy][:user]
@@ -38,5 +40,4 @@ define :secrets_template do
       File.exists?("#{params[:deploy][:deploy_to]}/shared/config")
     end
   end
-  
 end

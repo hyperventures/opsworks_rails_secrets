@@ -2,10 +2,4 @@
 # stack's custom JSON and executing the opsworks_rails_secrets::configure recipe.
 
 <% mash = JSON.parse(@env.dup.to_json) %>
-
-octopus:
-  environments:
-    - production
-  production:
-    shards:
-      <%= mash.to_yaml %>
+<%= mash.to_yaml %>
