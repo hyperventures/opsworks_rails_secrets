@@ -8,5 +8,11 @@ node[:deploy].each do |application, deploy|
     deploy deploy
     env node[:secrets][application]
   end
+
+  secrets_template do
+    application application
+    deploy deploy
+    env node[:secrets][:shards][application]
+  end
   
 end
